@@ -1,144 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kenyan Professionals Testimonials</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Testimonials Carousel</title>
   <style>
+    :root {
+      --primary: #6c63ff;
+      --bg: #f9fafc;
+      --text: #333;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f6f9;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
 
-    .carousel-container {
-      width: 600px;
-      max-width: 95%;
+    .carousel {
+      width: 95%;
+      max-width: 500px;
       background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 2rem;
-      position: relative;
     }
 
     .testimonial {
       display: none;
-      animation: fadeIn 1s ease forwards;
+      animation: fadeIn 0.8s ease-in-out;
     }
 
     .testimonial.active {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      grid-gap: 1rem;
-      align-items: center;
+      display: block;
     }
 
-    .testimonial img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #6c63ff;
-    }
-
-    .testimonial-content {
-      text-align: left;
-    }
-
-    .testimonial-content p {
+    .testimonial p {
       font-size: 1rem;
-      color: #333;
       line-height: 1.5;
-      margin: 0 0 0.5rem 0;
+      color: var(--text);
+      margin: 0.5rem 0 1rem;
     }
 
     .author {
       font-weight: 600;
-      color: #6c63ff;
+      color: var(--primary);
+      font-size: 0.95rem;
     }
 
-    .role {
-      font-size: 0.9rem;
-      color: #777;
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 0.8rem;
+      border: 2px solid var(--primary);
     }
 
-    /* Dots navigation */
+    /* Dots Navigation */
     .dots {
       display: flex;
       justify-content: center;
-      margin-top: 1.5rem;
+      gap: 8px;
+      margin-top: 1rem;
     }
 
     .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 6px;
-      background-color: #ccc;
+      width: 10px;
+      height: 10px;
+      background: #ddd;
       border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.3s ease;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     .dot.active {
-      background-color: #6c63ff;
+      background: var(--primary);
     }
 
-    /* Animations */
+    /* Animation */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Larger screens */
+    @media (min-width: 768px) {
+      .carousel {
+        max-width: 650px;
+        padding: 2rem;
+      }
+
+      .testimonial p {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .carousel {
+        max-width: 800px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      .testimonial p {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="carousel-container" id="carousel">
+  <div class="carousel" id="carousel">
     <div class="testimonial active">
-      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
-      <div class="testimonial-content">
-        <p>"OneApp has completely transformed how I handle my monthly salary. I save more and spend wisely."</p>
-        <div class="author">Sarah Mwende</div>
-        <div class="role">Financial Analyst, Nairobi</div>
-      </div>
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah" class="avatar">
+      <p>"OneApp helps me budget better every month and keeps me from overspending. A real game-changer!"</p>
+      <div class="author">— Sarah Wanjiku, Nairobi</div>
     </div>
     <div class="testimonial">
-      <img src="https://randomuser.me/api/portraits/men/36.jpg" alt="James">
-      <div class="testimonial-content">
-        <p>"The daily spending limits keep me disciplined. I finally cleared my debts faster than expected."</p>
-        <div class="author">James Otieno</div>
-        <div class="role">Software Engineer, Kisumu</div>
-      </div>
+      <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="James" class="avatar">
+      <p>"I’ve tried other apps, but OneApp is the first that truly fits the Kenyan lifestyle and spending habits."</p>
+      <div class="author">— James Otieno, Kisumu</div>
     </div>
     <div class="testimonial">
-      <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Aisha">
-      <div class="testimonial-content">
-        <p>"I love that OneApp respects Islamic finance values with Qard Hasan. It's ethical and empowering."</p>
-        <div class="author">Aisha Noor</div>
-        <div class="role">Entrepreneur, Mombasa</div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Peter">
-      <div class="testimonial-content">
-        <p>"The app feels designed for us, young professionals in Kenya. Clean, modern, and practical."</p>
-        <div class="author">Peter Kariuki</div>
-        <div class="role">Architect, Nakuru</div>
-      </div>
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Aisha" class="avatar">
+      <p>"With OneApp’s daily limits, I’ve finally managed to save consistently. Highly recommend it."</p>
+      <div class="author">— Aisha Mohammed, Mombasa</div>
     </div>
 
     <!-- Navigation dots -->
     <div class="dots">
       <span class="dot active"></span>
-      <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
     </div>
@@ -147,9 +146,8 @@
   <script>
     const testimonials = document.querySelectorAll(".testimonial");
     const dots = document.querySelectorAll(".dot");
-    const carousel = document.getElementById("carousel");
     let index = 0;
-    let interval;
+    let timer;
 
     function showTestimonial(n) {
       testimonials.forEach((t, i) => {
@@ -166,27 +164,30 @@
     }
 
     function startCarousel() {
-      interval = setInterval(nextTestimonial, 5000);
+      timer = setInterval(nextTestimonial, 5000);
     }
 
     function stopCarousel() {
-      clearInterval(interval);
+      clearInterval(timer);
     }
 
-    // Auto-rotate
+    // Auto-cycle
     startCarousel();
-
-    // Pause on hover
-    carousel.addEventListener("mouseenter", stopCarousel);
-    carousel.addEventListener("mouseleave", startCarousel);
 
     // Dots navigation
     dots.forEach((dot, i) => {
       dot.addEventListener("click", () => {
         index = i;
         showTestimonial(index);
+        stopCarousel();
+        startCarousel();
       });
     });
+
+    // Hover control (pause on hover)
+    const carousel = document.getElementById("carousel");
+    carousel.addEventListener("mouseenter", stopCarousel);
+    carousel.addEventListener("mouseleave", startCarousel);
   </script>
 </body>
 </html>
