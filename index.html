@@ -7,6 +7,82 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Testimonials Carousel Styles -->
+    <style>
+      body.carousel-bg {
+        background: #f4f6f9;
+      }
+      .carousel-container {
+        width: 600px;
+        max-width: 95%;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem;
+        position: relative;
+        margin: 0 auto;
+      }
+      .testimonial {
+        display: none;
+        animation: fadeIn 1s ease forwards;
+      }
+      .testimonial.active {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        grid-gap: 1rem;
+        align-items: center;
+      }
+      .testimonial img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #6c63ff;
+      }
+      .testimonial-content {
+        text-align: left;
+      }
+      .testimonial-content p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.5;
+        margin: 0 0 0.5rem 0;
+      }
+      .author {
+        font-weight: 600;
+        color: #6c63ff;
+      }
+      .role {
+        font-size: 0.9rem;
+        color: #777;
+      }
+      .dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+      .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 6px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .dot.active {
+        background-color: #6c63ff;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -131,6 +207,51 @@
         </div>
     </section>
 
+    <!-- Testimonials Section (from index(2).html) -->
+    <section id="testimonials" style="background: #f4f6f9; padding: 3rem 0;">
+      <div class="carousel-container" id="carousel">
+        <div class="testimonial active">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+          <div class="testimonial-content">
+            <p>"OneApp has completely transformed how I handle my monthly salary. I save more and spend wisely."</p>
+            <div class="author">Sarah Mwende</div>
+            <div class="role">Financial Analyst, Nairobi</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img src="https://randomuser.me/api/portraits/men/36.jpg" alt="James">
+          <div class="testimonial-content">
+            <p>"The daily spending limits keep me disciplined. I finally cleared my debts faster than expected."</p>
+            <div class="author">James Otieno</div>
+            <div class="role">Software Engineer, Kisumu</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Aisha">
+          <div class="testimonial-content">
+            <p>"I love that OneApp respects Islamic finance values with Qard Hasan. It's ethical and empowering."</p>
+            <div class="author">Aisha Noor</div>
+            <div class="role">Entrepreneur, Mombasa</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Peter">
+          <div class="testimonial-content">
+            <p>"The app feels designed for us, young professionals in Kenya. Clean, modern, and practical."</p>
+            <div class="author">Peter Kariuki</div>
+            <div class="role">Architect, Nakuru</div>
+          </div>
+        </div>
+        <!-- Navigation dots -->
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -139,13 +260,12 @@
                     <h2>About OneApp</h2>
                     <p>OneApp is an AI-powered personal finance management platform designed to enable working professionals to curb overspending by limiting their daily and weekly expenditure.</p>
                     <p>OneApp’s mission is to empower professionals to make better money moves and achieve their life goals.</p>
-                    <p>With over 250 weekly users in Kenya, OneApp is heldping working professionals manage personal spend, save more, spend smarter, and achieve their financial goals. Our commitment to meeting users needs, security, and privacy makes us the trusted choice for personal finance management.</p>
+                    <p>With over 250 weekly users in Kenya, OneApp is heldping working professionals manage personal spend, save more, spend smarter, and achieve their financial goals. Our commitment is to provide innovative solutions tailored for Kenyan professionals.</p>
                     <div class="stats">
                         <div class="stat">
                             <h3>250+</h3>
                             <p>Weekly Active Users</p>
                         </div>
-
                         <div class="stat">
                             <h3>9</h3>
                             <p>Net Promoter Score</p>
@@ -153,7 +273,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Team working on OneApp Cash">
+                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="About OneApp">
                 </div>
             </div>
         </div>
@@ -260,5 +380,50 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Testimonials Carousel Script -->
+    <script>
+      const testimonials = document.querySelectorAll(".testimonial");
+      const dots = document.querySelectorAll(".dot");
+      const carousel = document.getElementById("carousel");
+      let index = 0;
+      let interval;
+
+      function showTestimonial(n) {
+        testimonials.forEach((t, i) => {
+          t.classList.remove("active");
+          dots[i].classList.remove("active");
+        });
+        testimonials[n].classList.add("active");
+        dots[n].classList.add("active");
+      }
+
+      function nextTestimonial() {
+        index = (index + 1) % testimonials.length;
+        showTestimonial(index);
+      }
+
+      function startCarousel() {
+        interval = setInterval(nextTestimonial, 5000);
+      }
+
+      function stopCarousel() {
+        clearInterval(interval);
+      }
+
+      // Auto-rotate
+      startCarousel();
+
+      // Pause on hover
+      carousel.addEventListener("mouseenter", stopCarousel);
+      carousel.addEventListener("mouseleave", startCarousel);
+
+      // Dots navigation
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          showTestimonial(index);
+        });
+      });
+    </script>
 </body>
-</html> 
+</html>
