@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OneApp: AI-powered personal finance managenment</title>
+    <title>OneApp: Personal expense managenment</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -15,7 +15,7 @@
       .carousel-container {
         width: 600px;
         max-width: 95%;
-        background: #0000;
+        background: #1a1a1a;
         border-radius: 20px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         overflow: hidden;
@@ -31,7 +31,8 @@
         animation: fadeIn 1s ease forwards;
       }
       .testimonial.active {
-        display: grid;
+        display: block;
+    <!-- Comment: Changed display from "grid" to "block" since the image in testimonial was removed. -->
         grid-template-columns: 80px 1fr;
         grid-gap: 1rem;
         align-items: center;
@@ -44,17 +45,17 @@
         border: 3px solid #0000;
       }
       .testimonial-content {
-        text-align: left;
+        text-align: center;
       }
       .testimonial-content p {
-        font-size: 1rem;
+        font-size: 1.3rem;
         color: #f4f6f9;
         line-height: 1.5;
         margin: 0 0 0.5rem 0;
       }
       .author {
         font-weight: 600;
-        color: #6c63ff;
+        color: #f37b47;
       }
       .role {
         font-size: 0.9rem;
@@ -76,7 +77,7 @@
         cursor: pointer;
       }
       .dot.active {
-        background-color: #6c63ff;
+        background-color: #f37b47;
       }
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
@@ -93,10 +94,12 @@
                 <span>OneApp</span>
             </div>
             <ul class="nav-menu">
+                <!-- Comment
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                -->
                 <li><a href="https://one.indexfand.com" class="cta-button">Create Account</a></li>
             </ul>
             <div class="hamburger">
@@ -107,19 +110,18 @@
         </div>
     </nav>
 
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Make better <br><span class="indent">money moves</span></h1>
-                <p>More than 250 working professionals in Kenya use OneApp to curb overspending by limiting their daily and weekly expenditure.</p>
+                <h1>Personal expense management</h1>
+                <p>Over 250 working professionals in Kenya use OneApp to curb overspending by limiting their daily and weekly expenditure.</p>
                 <div class="hero-buttons">
-                    <a href="#download" class="btn-primary">
-                        Get started
-                    </a>
+                    <a href="https://one.indexfand.com/signup" class="cta-button">Try OneApp - it's free</a>
                 </div>
                 <div class="disclaimer">
-                    OneApp is a financial technology platform, not a bank. Banking services are provided by OneApp's bank partner(s), regulated by Central Bank of Kenya (CBK).
+                    OneApp is a financial technology platform, not a bank. Banking services are provided by OneApp's bank partner(s), licensed and regulated by the Central Bank of Kenya (CBK).
                 </div>
             </div>
             <div class="hero-image">
@@ -143,9 +145,7 @@
                         <div class="pie-chart"></div>
                         <div class="line-graph"></div>
                         <div class="currency-symbols">
-                            <span>$</span>
-                            <span>¥</span>
-                            <span>€</span>
+                            <span>KES.</span>
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features Section 
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
@@ -206,6 +206,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Testimonials Section (from index(2).html) -->
     <section id="testimonials" style="background: #0000; padding: 3rem 0;">
@@ -215,7 +216,9 @@
         </div>
       <div class="carousel-container" id="carousel">
         <div class="testimonial active">
+        <!-- Comment 
           <img src="avatar.png" alt="">
+        -->
           <div class="testimonial-content">
             <p>"The 6AM automatic transfers are genius! I wake up knowing exactly how much I can spend today. I save more and spend wisely."</p>
             <div class="author">James Otieno</div>
@@ -223,7 +226,9 @@
           </div>
         </div>
         <div class="testimonial">
-            <img src="avatar.png" alt="">
+        <!-- Comment 
+          <img src="avatar.png" alt="">
+        -->
           <div class="testimonial-content">
             <p>"OneApp taught me the power of daily limits. Instead of trying to budget monthly and failing, I now succeed daily. Small wins that add up to big savings!
 "</p>
@@ -232,7 +237,9 @@
           </div>
         </div>
         <div class="testimonial">
+        <!-- Comment 
           <img src="avatar.png" alt="">
+        -->
           <div class="testimonial-content">
             <p>"OneApp has completely transformed how I manage my daily spending. I used to overspend on weekends, but now I have clear limits that help me save for my goals."</p>
             <div class="author">Peter Kariuki</div>
@@ -240,7 +247,9 @@
           </div>
         </div>
         <div class="testimonial">
+        <!-- Comment 
           <img src="avatar.png" alt="">
+        -->
           <div class="testimonial-content">
             <p>"As someone who works in finance, I appreciate OneApp's approach to behavioral budgeting. It's simple, effective, and actually works."</p>
             <div class="author">David Kiplagat</div>
@@ -257,7 +266,7 @@
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section 
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
@@ -283,8 +292,9 @@
             </div>
         </div>
     </section>
+    -->
     
-    <!-- Contact Section -->
+    <!-- Contact Section 
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
@@ -333,6 +343,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -352,6 +363,7 @@
                         <a href="https://www.linkedin.com/company/oneapphq/?viewAsMember=true"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
+                 <!-- Comment
                 <div class="footer-section">
                     <h3>Product</h3>
                     <ul>
@@ -359,15 +371,17 @@
                         <li><a href="#">Pricing</a></li>
                     </ul>
                 </div>
+                 -->
+                <!-- Comment
                 <div class="footer-section">
                     <h3>Company</h3>
                     <ul>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="https://medium.com/@heyoneapp">Blog</a></li>
+                        <li><a href="https://medium.com/@heyoneapp">Stories</a></li>
                     </ul>
                 </div>
+                -->
+                <!-- Comment
                 <div class="footer-section">
                     <h3>Support</h3>
                     <ul>
@@ -377,9 +391,10 @@
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
+                -->
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 OneApp. All rights reserved.</p>
+                <p>&copy; 2025 OneApp Platforms Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
