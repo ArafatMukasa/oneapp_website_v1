@@ -63,28 +63,31 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: #ff8c00;
+    color: #0000;
 }
 
 .cta-button {
     background: #ff8c00;
-    color: #ffffff !important;
+    color: #ffffff;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
     transition: all 0.3s ease;
     font-weight: 600;
+    text-decoration: none !important; 
+
 }
 
 .cta-button:hover {
     background: #e67e00;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
+    text-decoration: none !important; 
 }
 
 .hamburger {
@@ -103,8 +106,8 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 120px 0 80px;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    padding: 120px 0 0;
+    background: 0000; /* Adjusted background to match testimonial section. Previously it was linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%); */
     color: white;
     min-height: 100vh;
     display: flex;
